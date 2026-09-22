@@ -8,3 +8,6 @@ def test_spec():
     spec = ProjwfcBandsWorkChain.spec()
 
     assert "projwfc" in spec.inputs
+    assert ("relax" in spec.inputs) == hasattr(
+        ProjwfcBandsWorkChain, "should_run_relax"
+    )
